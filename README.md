@@ -45,23 +45,41 @@ Notre objectif : **créer une alternative open-source à Twitter**, avec :
 
 Suivez bien ça risque d'être dur pour vous
 
-├── frontend/ # Application Nuxt V4
-│ ├── components/ # Composants Vue (ex: PostCard.vue, Navbar.vue)
-│ │ ├── ui/ # Composants réutilisables (boutons, inputs)
-│ ├── pages/ # Pages principales (ex: index.vue, login.vue)
-│ ├── stores/ # Stores Pinia (ex: auth.ts, posts.ts)
-│ └── nuxt.config.ts # Configuration Nuxt
+```bash
+📦 projet-final-nsi
+├── 📂 frontend/              # Nuxt 4
+│   ├── 📂 components/        # Composants Vue
+│   │   └── 📂 ui/            # Composants réutilisables (boutons, inputs, etc.)
+│   ├── 📂 pages/             # Pages principales (index.vue, login.vue)
+│   ├── 📂 stores/            # Stores Pinia (auth.ts, posts.ts)
+│   ├── 📄 app.vue            # Layout principal
+│   ├── 📄 nuxt.config.ts     # Configuration Nuxt
+│   └── 📄 tailwind.config.js # Configuration TailwindCSS
 │
-├── backend/ # API FastAPI
-│ ├── api/ # Endpoints (ex: auth.py, posts.py)
-│ ├── models/ # Modèles SQLModel (ex: user.py, post.py)
-│ ├── schemas/ # Schémas Pydantic
-│ ├── core/ # Configuration (DB, sécurité)
-│ └── main.py # Point d'entrée FastAPI
+├── 📂 backend/               # FastAPI
+│   ├── 📂 api/               # Endpoints API
+│   │   ├── 📄 auth.py        # Routes d'authentification
+│   │   ├── 📄 posts.py       # Routes pour les posts
+│   │   └── 📄 users.py       # Routes pour les utilisateurs
+│   ├── 📂 models/            # Modèles SQLModel
+│   │   ├── 📄 user.py        # Modèle utilisateur
+│   │   └── 📄 post.py        # Modèle post
+│   ├── 📂 schemas/           # Schémas Pydantic
+│   ├── 📂 core/              # Configuration de base
+│   │   ├── 📄 config.py      # Configuration de l'application
+│   │   └── 📄 security.py    # Gestion de la sécurité (JWT, etc.)
+│   ├── 📄 main.py            # Point d'entrée FastAPI
+│   └── 📄 requirements.txt   # Dépendances Python
 │
-├── Taurii/ # Notre build pour l'app de bureau
+├── 📂 desktop/               # Tauri (Rust)
+│   ├── 📂 src-tauri/         # Code source Rust
+│   └── 📄 tauri.conf.json    # Configuration Tauri
 │
-├── docs/ # Documentation
-│ ├── CONTRIBUTING.md # C'est le prochain que vous allez lire
 │
-└── README.md # Ce fichier !
+├── 📂 docs/                  # Documentation
+│   ├── 📄 CONTRIBUTING.md        # Guide de contribution
+│
+├── 📄 .gitignore             # Fichiers ignorés par Git
+├── 📄 README.md              # Ce fichier
+
+```
