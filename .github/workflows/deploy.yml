@@ -27,7 +27,7 @@ jobs:
               git pull origin main
             else
               echo "Repository not on VPS ! Cloning...."
-              git clone git@github.com/Karssou/reseau-social-quelconque.git
+              git clone git@github.com:Karssou/reseau-social-quelconque.git
               touch test.txt
             fi
             echo "Déploiement terminé !"
