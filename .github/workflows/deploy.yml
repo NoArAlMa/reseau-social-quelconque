@@ -20,8 +20,14 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: 22
           script: |
-            cd /blabla
-            git fetch origin
-            git checkout main
-            git pull origin main
+            if [ -d "/reseau-social-quelconque" ]; then
+              cd /reseau-social-quelconque
+              git fetch origin
+              git checkout main
+              git pull origin main
+            else
+              echo "Repository not on VPS ! Cloning...."
+              git clone https://github.com/Karssou/reseau-social-quelconque
+              touch test.txt
+            fi
             echo "Déploiement terminé !"
