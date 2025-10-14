@@ -47,7 +47,6 @@ Pour que tout se passe bien, voici les règles du jeu.
 ### Frontend (Nuxt)
 
 - Composants **réutilisables** → dans `/components/ui/`.
-- Props typées avec TypeScript pls NOHAM T T.
 
 ### Backend (FastAPI)
 
@@ -76,3 +75,4 @@ python venv venv ./venv #un truc dans le genre quoi
 **\*N'oubliez pas d'utilisez **Postman** pour tester NOTRE api\***
 
 Et surtout n'oubliez pas qu'a chaque erreur je vous défonce !!
+Et si vous avez des questions à ne pas hésitez surtout = D
