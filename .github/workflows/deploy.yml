@@ -20,14 +20,48 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: 22
           script: |
-            if [ -d "/reseau-social-quelconque" ]; then
-              cd /reseau-social-quelconque
-              git fetch origin
-              git checkout main
-              git pull origin main
+            # Couleurs pour les messages
+            RED='\033[0;31m'
+            GREEN='\033[0;32m'
+            YELLOW='\033[1;33m'
+            NC='\033[0m' # No Color
+
+            # Chemin du dépôt
+            REPO_PATH="reseau-social-quelconque"
+            REPO_URL="git@github.com:Karssou/reseau-social-quelconque.git"
+
+            echo -e "${YELLOW}=== Début du déploiement ===${NC}"
+
+            if [ -d "$REPO_PATH" ]; then
+              echo -e "${GREEN}✅ Dépôt trouvé. Mise à jour en cours...${NC}"
+              cd "$REPO_PATH" || { echo -e "${RED}❌ Erreur : Impossible d'entrer dans $REPO_PATH${NC}"; exit 1; }
+
+              echo -e "${YELLOW}→ Récupération des dernières modifications...${NC}"
+              git fetch origin || { echo -e "${RED}❌ Erreur lors du fetch${NC}"; exit 1; }
+
+              echo -e "${YELLOW}→ Bascule sur la branche main...${NC}"
+              git checkout main || { echo -e "${RED}❌ Erreur lors du checkout${NC}"; exit 1; }
+
+              echo -e "${YELLOW}→ Mise à jour du code...${NC}"
+              git pull origin main || { echo -e "${RED}❌ Erreur lors du pull${NC}"; exit 1; }
+
+              echo -e "${GREEN}✅ Code mis à jour avec succès !${NC}"
             else
-              echo "Repository not on VPS ! Cloning...."
-              git clone git@github.com:Karssou/reseau-social-quelconque.git
-              touch test.txt
+              echo -e "${YELLOW}⚠️  Dépôt non trouvé. Clonage en cours...${NC}"
+
+              git clone "$REPO_URL" || { echo -e "${RED}❌ Erreur lors du clone${NC}"; exit 1; }
+              echo -e "${GREEN}✅ Dépôt cloné avec succès !${NC}"
+
+              # Optionnel : Créer un fichier de test (exemple)
+              touch "$REPO_PATH/test.txt" && echo -e "${GREEN}✅ Fichier de test créé.${NC}"
             fi
-            echo "Déploiement terminé !"
+
+            # Vérification finale
+            if [ -d "$REPO_PATH" ]; then
+              echo -e "${GREEN}============================${NC}"
+              echo -e "${GREEN}✨ Déploiement terminé avec succès ! ✨${NC}"
+              echo -e "${GREEN}============================${NC}"
+            else
+              echo -e "${RED}❌ ÉCHEC : Le dépôt n'a pas été déployé.${NC}"
+              exit 1
+            fi
