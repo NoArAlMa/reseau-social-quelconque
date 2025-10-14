@@ -1,0 +1,25 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: ["main"] # Se déclenche quand tu pushes sur main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }} # IP de ton VPS
+          username: ${{ secrets.VPS_USER }} # Utilisateur SSH (ex: root)
+          key: ${{ secrets.VPS_SSH_KEY }} # Clé SSH privée
+          script: |
+            cd /var/www/ton-projet
+            git fetch origin
+            git checkout main
+            git pull origin main
+            echo "Déploiement terminé !"

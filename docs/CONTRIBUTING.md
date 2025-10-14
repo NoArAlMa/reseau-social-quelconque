@@ -1,6 +1,6 @@
 # Contribuer à Projet Final NSI
 
-**Merci de participer !** 🎉
+**Merci de participer...même si t'es en retard :O !** 🎉
 Pour que tout se passe bien, voici les règles du jeu.
 
 ---
@@ -19,7 +19,7 @@ Pour que tout se passe bien, voici les règles du jeu.
 ### Conditions pour merger
 
 - [ ] La PR est liée à une **issue** (ex: "Closes #12").
-- [ ] Un **reviewer** a approuvé (mentionnez @Karssou).
+- [ ] Un **reviewer** a approuvé (mentionne @Karssou).
 
 ### Titre de la PR
 
@@ -29,8 +29,8 @@ Pour que tout se passe bien, voici les règles du jeu.
 ### Description de la PR
 
 - **Contexte** : Pourquoi ce changement ?
-- **Modifications** : Liste des fichiers modifiés et leur rôle.
-- **Captures** : Si UI, ajoutez un screenshot (utilisez [Markdown](https://guides.github.com/features/mastering-markdown/)).
+- **Modifications** : Liste des fichiers modifiés entre gros guillemets
+- **Captures** : Si UI, ajoutez un screenshot (optionnel) (utilisez [Markdown](https://guides.github.com/features/mastering-markdown/)).
 - **Checklist** :
   - [ ] J’ai testé mon code localement.
   - [ ] J’ai suivi les conventions du projet.
@@ -42,7 +42,7 @@ Pour que tout se passe bien, voici les règles du jeu.
 ### Général
 
 - **Commits** : Messages clairs en anglais (ex: "Add login form validation").
-- **Langue** : Commentaires en **français** (pour l’équipe), mais noms de variables/fonctions en **anglais**.
+- **Langue** : Commentaires en **français** (pour l’équipe de loups ahouuuu), mais noms de variables/fonctions en **anglais**.
 
 ### Frontend (Nuxt)
 
