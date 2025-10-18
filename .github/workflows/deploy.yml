@@ -27,7 +27,7 @@ jobs:
             NC='\033[0m'
 
             REPO_PATH="reseau-social-quelconque"  # Chemin relatif (depuis le répertoire courant)
-            REPO_URL="git@github.com:Karssou/reseau-social-quelconque.git"
+            REPO_URL="git@github.com:NoArAlMa/reseau-social-quelconque.git"
 
             echo -e "${YELLOW}=== Début du déploiement ===${NC}"
 
