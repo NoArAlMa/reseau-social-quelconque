@@ -1,6 +1,6 @@
 # Contribuer à Projet Final NSI
 
-**Merci de participer...même si t'es en retard :O !** 🎉
+⚠️ **ATTENTION CE PROJET N'ACCEPTE AUCUN CONTRIBUTEURS EXTERNES !** ⚠️
 Pour que tout se passe bien, voici les règles du jeu.
 
 ---
