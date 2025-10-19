@@ -1,6 +1,6 @@
 # Projet Final NSI - Réseau Social "Twitter-like"
 
-🚀 **Un réseau social minimaliste développé avec Nuxt 4, FastAPI et PostgreSQL** – par Les loups de la NSI Ahouuuuu.
+🚀 **Un réseau social minimaliste développé avec Nuxt 4, FastAPI et PostgreSQL** – par Les loups de NoArAlMa Ahouuuuu.
 
 ---
 
