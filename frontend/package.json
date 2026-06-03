@@ -2,7 +2,7 @@
   "name": "frontend",
   "productName": "NohamDrive",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Alexandre LARUE",
   "description": "NohamDrive, le meilleur Drive, fait par les meilleurs, pour les meilleurs !",
   "private": true,
