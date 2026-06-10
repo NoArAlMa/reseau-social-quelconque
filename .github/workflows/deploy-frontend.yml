@@ -65,9 +65,9 @@ jobs:
             echo -e "${YELLOW}=== Début du déploiement du frontend ===${NC}"
             cd "$APP_PATH" || { echo -e "${RED}❌ Impossible d'accéder au dossier ${APP_PATH}${NC}"; exit 1; }
             echo -e "${YELLOW}🔄 Arrêt du conteneur existant (si présent)...${NC}"
-            docker compose -f docker-compose.backend.yml down || true
+            docker compose -f docker-compose.frontend.yml down || true
             echo -e "${YELLOW}🐳 Lancement du conteneur frontend...${NC}"
-            docker compose -f docker-compose.backend.yml up --build -d --remove-orphans || { echo -e "${RED}❌ Erreur lors du démarrage du conteneur${NC}"; exit 1; }
+            docker compose -f docker-compose.frontend.yml up --build -d --remove-orphans || { echo -e "${RED}❌ Erreur lors du démarrage du conteneur${NC}"; exit 1; }
             echo -e "${YELLOW}🧹 Nettoyage des images Docker inutilisées...${NC}"
             docker image prune -f || { echo -e "${RED}❌ Erreur lors du nettoyage${NC}"; exit 1; }
             if docker ps | grep -q "frontend"; then
