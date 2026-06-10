@@ -30,9 +30,9 @@ jobs:
       - name: Clean previous .output
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          host: ${{ secrets.HSERV_URL }}
+          username: ${{ secrets.HSERV_USER }}
+          key: ${{ secrets.HSERV_SSH_KEY }}
           port: 22
           script: |
             echo "Cleaning old .output..."
@@ -41,9 +41,9 @@ jobs:
       - name: Transfer .output
         uses: appleboy/scp-action@v0.1.4
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          host: ${{ secrets.HSERV_URL }}
+          username: ${{ secrets.HSERV_USER }}
+          key: ${{ secrets.HSERV_SSH_KEY }}
           port: 22
           source: "frontend/.output/*"
           target: "~/NohamDrive/frontend/.output"
@@ -52,9 +52,9 @@ jobs:
       - name: Launch frontend on Raspberry Pi
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          host: ${{ secrets.HSERV_URL }}
+          username: ${{ secrets.HSERV_USER }}
+          key: ${{ secrets.HSERV_SSH_KEY }}
           port: 22
           script: |
             RED='\033[0;31m'
