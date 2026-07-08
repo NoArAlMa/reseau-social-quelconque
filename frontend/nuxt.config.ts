@@ -4,21 +4,24 @@ export default defineNuxtConfig({
   // Ignore le dossier electron
   ignore: ["electron"],
 
-  modules: ["@nuxt/ui", "@pinia/nuxt", "@vueuse/nuxt", "nuxt-i18n-micro"],
+  // "nuxt-i18n-micro"
 
-  i18n: {
-    locales: [
-      { code: "fr", iso: "fr-FR", dir: "ltr", name: "Français" },
-      { code: "en", iso: "en-US", dir: "ltr", name: "English" },
-    ],
-    defaultLocale: "fr",
-    fallbackLocale: "fr",
-    strategy: "prefix_except_default",
-    translationDir: "locales",
-    meta: true,
-    autoDetectLanguage: true,
-    localeCookie: "user-locale",
-  },
+  modules: ["@nuxt/ui", "@pinia/nuxt", "@vueuse/nuxt"],
+
+  // i18n: {
+  //   locales: [
+  //     { code: "fr", iso: "fr-FR", dir: "ltr", name: "Français" },
+  //     { code: "en", iso: "en-US", dir: "ltr", name: "English" },
+  //   ],
+  //   defaultLocale: "fr",
+  //   fallbackLocale: "fr",
+  //   strategy: "prefix_except_default",
+  //   translationDir: "locales",
+  //   meta: true,
+  //   excludePaths: ["/api/**"],
+  //   autoDetectLanguage: false,
+  //   localeCookie: "user-locale",
+  // },
 
   // Importation des fichiers css principaux
 
