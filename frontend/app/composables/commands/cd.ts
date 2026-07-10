@@ -43,7 +43,7 @@ export const changeDirectoryCommand: TerminalCommand = {
 
       try {
         const resolved = await $fetch<GenericAPIResponse<FileExistsResponse>>(
-          "api/storage/resolve",
+          "/api/storage/resolve",
           {
             query: { path: resolved_path },
           },

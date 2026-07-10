@@ -43,7 +43,7 @@ export const listCommand: TerminalCommand = {
 
       try {
         const data = await $fetch<GenericAPIResponse<ApiFileTreeData>>(
-          "api/storage/tree",
+          "/api/storage/tree",
           {
             method: "GET",
             query: { path: correct_path },

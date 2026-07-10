@@ -47,7 +47,7 @@ const fetchFileTree = async (): Promise<void> => {
     error.value = null;
 
     const response = await $fetch<GenericAPIResponse<ApiFileTreeData>>(
-      "api/storage/tree",
+      "/api/storage/tree",
       {
         query: { path: breadcrumb.value },
       },

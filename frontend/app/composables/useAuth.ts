@@ -31,7 +31,7 @@ export const useAuth = () => {
   ): Promise<AuthResponse<AuthUserResponse>> {
     try {
       const response = await $fetch<GenericAPIResponse<AuthUserResponse>>(
-        "api/auth/login",
+        "/api/auth/login",
         {
           method: "POST",
           body: payload,
@@ -65,7 +65,7 @@ export const useAuth = () => {
       const cleanedData = { ...rest, password };
 
       const response = await $fetch<GenericAPIResponse<AuthUserResponse>>(
-        "api/auth/register",
+        "/api/auth/register",
         {
           method: "POST",
           body: cleanedData,

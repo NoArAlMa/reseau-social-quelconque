@@ -29,7 +29,7 @@ export const downloadCommand: TerminalCommand = {
       const cleanPath = correct_path.replace(/^\/+/, "");
 
       try {
-        const response = await fetch(`api/storage/download/${cleanPath}`);
+        const response = await fetch(`/api/storage/download/${cleanPath}`);
 
         if (!response.ok) {
           const text = (await response.json()) as GenericAPIResponse<null>;

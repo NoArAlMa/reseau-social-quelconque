@@ -15,7 +15,7 @@ const previewKey = ref(0);
 let abortController: AbortController | null = null;
 
 const previewUrl = computed(() =>
-  props.previewPath ? `api/storage/preview/${props.previewPath}` : null,
+  props.previewPath ? `/api/storage/preview/${props.previewPath}` : null,
 );
 
 async function fetchPreview() {
