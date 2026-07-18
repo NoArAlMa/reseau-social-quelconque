@@ -22,11 +22,6 @@ const items = computed<NavigationMenuItem[][]>(() => [
       },
       to: "#echo",
     },
-    {
-      label: "Review",
-      icon: "material-symbols:comment-outline-rounded",
-      to: "#testimonials",
-    },
   ],
 ]);
 
