@@ -16,7 +16,6 @@ export default defineNuxtConfig({
     strategy: "prefix_except_default",
     translationDir: "locales",
     meta: true,
-    excludePaths: ["/api/**"],
     autoDetectLanguage: false,
     localeCookie: "user-locale",
   },
@@ -43,6 +42,7 @@ export default defineNuxtConfig({
   },
 
   icon: {
+    provider: "server",
     serverBundle: {
       collections: ["material-symbols"],
     },
@@ -100,9 +100,14 @@ export default defineNuxtConfig({
   vite: {
     css: {
       devSourcemap: true,
+      preprocessorOptions: {},
     },
     build: {
       sourcemap: process.env.NODE_ENV === "development",
     },
+  },
+
+  features: {
+    inlineStyles: true,
   },
 });
