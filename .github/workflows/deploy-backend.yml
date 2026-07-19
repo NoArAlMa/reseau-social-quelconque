@@ -1,4 +1,4 @@
-name: Deploy Backend to VPS
+name: Deploy Backend to Server
 
 on:
   push:
@@ -13,9 +13,9 @@ jobs:
       - name: Deploy backend via SSH
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          host: ${{ secrets.HSERV_URL }}
+          username: ${{ secrets.HSERV_USER }}
+          key: ${{ secrets.HSERV_SSH_KEY }}
           port: 22
           script: |
             # Couleurs
@@ -40,11 +40,11 @@ jobs:
 
             # Build et redémarrage du conteneur backend
             echo -e "${YELLOW}🐳 Construction de l'image Docker pour le backend...${NC}"
-            docker compose -f docker-compose.backend.yml build || { echo -e "${RED}❌ Erreur lors du build Docker${NC}"; exit 1; }
+            docker compose build || { echo -e "${RED}❌ Erreur lors du build Docker${NC}"; exit 1; }
 
             echo -e "${YELLOW}🔄 Redémarrage du conteneur backend...${NC}"
-            docker compose -f docker-compose.backend.yml down || { echo -e "${RED}❌ Erreur lors de l'arrêt du conteneur${NC}"; exit 1; }
-            docker compose -f docker-compose.backend.yml up -d --remove-orphans || { echo -e "${RED}❌ Erreur lors du démarrage du conteneur${NC}"; exit 1; }
+            docker compose down || { echo -e "${RED}❌ Erreur lors de l'arrêt du conteneur${NC}"; exit 1; }
+            docker compose up -d --remove-orphans || { echo -e "${RED}❌ Erreur lors du démarrage du conteneur${NC}"; exit 1; }
 
             # Nettoyage
             echo -e "${YELLOW}🧹 Nettoyage des images Docker inutilisées...${NC}"
